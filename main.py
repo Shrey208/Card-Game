@@ -29,14 +29,29 @@ for i in rand1.Name :
     abidf = abdf.loc[:,[(abdf[col] == True).all() for col in abdf.columns]]
     rand1['Abilities'] = ", ".join(abidf)
     tr = rand1.transpose()
-    tr.to_csv('cs.csv')
+    tr.to_csv('cs1.csv')
 
-with open("cs.csv",'r') as f:
-    with open("final.csv",'w') as f1:
+with open("cs1.csv",'r') as f:
+    with open("p1.csv",'w') as f1:
         next(f)
         for line in f:
             f1.write(line)
 
-os.remove("cs.csv")
+rand2 = sdf.sample()
+for i in rand2.Name :
+    abdf = adf.loc[adf['Name'] == i]
+    abidf = abdf.loc[:,[(abdf[col] == True).all() for col in abdf.columns]]
+    rand2['Abilities'] = ", ".join(abidf)
+    tr = rand2.transpose()
+    tr.to_csv('cs2.csv')
+
+with open("cs2.csv",'r') as f:
+    with open("p2.csv",'w') as f1:
+        next(f)
+        for line in f:
+            f1.write(line)
+
+os.remove("cs1.csv")
+os.remove("cs2.csv")
 os.remove("stats.csv")
 os.remove("abilities.csv")
