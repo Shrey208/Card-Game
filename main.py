@@ -4,8 +4,10 @@ from kaggle.api.kaggle_api_extended import KaggleApi
 api = KaggleApi()
 api.authenticate()
 
-if os.path.exists("cs.csv"):
-    os.remove("cs.csv")
+if os.path.exists("cs1.csv"):
+    os.remove("cs1.csv")
+if os.path.exists("cs2.csv"):
+    os.remove("cs2.csv")
 if os.path.exists("final.csv"):
     os.remove("final.csv")
 if os.path.exists("stats.csv"):

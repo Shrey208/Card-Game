@@ -1,10 +1,10 @@
-Name,Abomination
-Alignment,bad
+Name,Maverick
+Alignment,good
 Intelligence,63
-Strength,80
-Speed,53
-Durability,90
-Power,55
-Combat,95
-Total,436
-Abilities,"Accelerated Healing, Intelligence, Super Strength, Stamina, Super Speed, Invulnerability, Animation, Super Breath"
+Strength,10
+Speed,12
+Durability,42
+Power,60
+Combat,85
+Total,272
+Abilities,Electrokinesis
