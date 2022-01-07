@@ -12,7 +12,6 @@ if os.path.exists("stats.csv"):
     os.remove("stats.csv")
 if os.path.exists("abilities.csv"):
     os.remove("abilities.csv")
-
 api.dataset_download_file('dannielr/marvel-superheroes', 'charcters_stats.csv')
 api.dataset_download_file('dannielr/marvel-superheroes', 'superheroes_power_matrix.csv')
 os.rename("charcters_stats.csv", "stats.csv")
