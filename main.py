@@ -68,7 +68,7 @@ sdf = stats[stats.Name.isin(df.Name)]
 adf = abilities[abilities.Name.isin(df.Name)]
 
 n = int(input("Enter no. of Characters : "))
-for i in range(n):
+for i in range(1,n+1):
     getsts(i)
 
 os.remove("stats.csv")
