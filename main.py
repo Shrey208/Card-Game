@@ -1,19 +1,60 @@
 import os
+import requests
 import pandas as pd
+from bs4 import BeautifulSoup
 from kaggle.api.kaggle_api_extended import KaggleApi
 api = KaggleApi()
 api.authenticate()
 
-if os.path.exists("cs1.csv"):
-    os.remove("cs1.csv")
-if os.path.exists("cs2.csv"):
-    os.remove("cs2.csv")
-if os.path.exists("final.csv"):
-    os.remove("final.csv")
-if os.path.exists("stats.csv"):
-    os.remove("stats.csv")
-if os.path.exists("abilities.csv"):
-    os.remove("abilities.csv")
+glink = 'https://www.google.com/search?site=&tbm=isch&source=hp&biw=1873&bih=990&'
+usr = { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+    'Accept-Encoding': 'none',
+    'Accept-Language': 'en-US,en;q=0.8',
+    'Connection': 'keep-alive' }
+
+def getimg(data, n):
+    imgname = "p" + str(n) +".png"
+    if os.path.exists(imgname):
+        os.remove(imgname)
+    url = glink + 'q=' + data + " Marvel Comics"
+    response = requests.get(url, headers = usr)
+    html = response.text
+    bs = BeautifulSoup(html, 'html.parser')
+    results = bs.findAll('img', {'class': 'rg_i Q4LuWd'})
+    imagelinks = []
+    for res in results:
+        try:
+            link = res['data-src']
+            imagelinks.append(link)
+            break
+        except KeyError:
+            continue
+    for i,imagelink in enumerate(imagelinks):
+        response = requests.get(imagelink)
+        with open(imgname, 'wb') as file:
+            file.write(response.content)
+
+def getsts(n) :
+    csname = "cs" + str(n) + ".csv"
+    pname = "p" + str(n) + ".csv"
+    if os.path.exists(pname):
+        os.remove(pname)
+    rand = sdf.sample()
+    for cname in rand.Name :
+        abdf = adf.loc[adf['Name'] == cname]
+        getimg(cname,n)
+        abidf = abdf.loc[:,[(abdf[col] == True).all() for col in abdf.columns]]
+        rand['Abilities'] = ", ".join(abidf)
+        tr = rand.transpose()
+        tr.to_csv(csname)
+    with open(csname,'r') as f:
+        with open(pname,'w') as f1:
+            next(f)
+            for line in f:
+                f1.write(line)
+    os.remove(csname)
 
 api.dataset_download_file('dannielr/marvel-superheroes', 'charcters_stats.csv')
 api.dataset_download_file('dannielr/marvel-superheroes', 'superheroes_power_matrix.csv')
@@ -26,35 +67,9 @@ df = stats.merge(abilities, on=['Name'])
 sdf = stats[stats.Name.isin(df.Name)]
 adf = abilities[abilities.Name.isin(df.Name)]
 
-rand1 = sdf.sample()
-for i in rand1.Name :
-    abdf = adf.loc[adf['Name'] == i]
-    abidf = abdf.loc[:,[(abdf[col] == True).all() for col in abdf.columns]]
-    rand1['Abilities'] = ", ".join(abidf)
-    tr = rand1.transpose()
-    tr.to_csv('cs1.csv')
+n = int(input("Enter no. of Characters : "))
+for i in range(n):
+    getsts(i)
 
-with open("cs1.csv",'r') as f:
-    with open("p1.csv",'w') as f1:
-        next(f)
-        for line in f:
-            f1.write(line)
-
-rand2 = sdf.sample()
-for i in rand2.Name :
-    abdf = adf.loc[adf['Name'] == i]
-    abidf = abdf.loc[:,[(abdf[col] == True).all() for col in abdf.columns]]
-    rand2['Abilities'] = ", ".join(abidf)
-    tr = rand2.transpose()
-    tr.to_csv('cs2.csv')
-
-with open("cs2.csv",'r') as f:
-    with open("p2.csv",'w') as f1:
-        next(f)
-        for line in f:
-            f1.write(line)
-
-os.remove("cs1.csv")
-os.remove("cs2.csv")
 os.remove("stats.csv")
 os.remove("abilities.csv")
