@@ -1,10 +1,10 @@
-Name,Red Mist
+Name,Leader
 Alignment,bad
-Intelligence,25
+Intelligence,100
 Strength,10
-Speed,23
+Speed,12
 Durability,14
-Power,20
-Combat,56
-Total,148
-Abilities,"Agility, Stamina"
+Power,58
+Combat,42
+Total,236
+Abilities,"Intelligence, Telepathy, Telekinesis"

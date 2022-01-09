@@ -38,7 +38,6 @@ def getimg(data, n):
             file.write(response.content)
 
 def getsts(n) :
-    csname = "cs" + str(n) + ".csv"
     pname = "p" + str(n) + ".csv"
     if os.path.exists(pname):
         os.remove(pname)
@@ -50,13 +49,13 @@ def getsts(n) :
         abidf = abdf.loc[:,[(abdf[col] == True).all() for col in abdf.columns]]
         rand['Abilities'] = ", ".join(abidf)
         tr = rand.transpose()
-        tr.to_csv(csname)
-    with open(csname,'r') as f:
+        tr.to_csv("cs.csv")
+    with open("cs.csv",'r') as f:
         with open(pname,'w') as f1:
             next(f)
             for line in f:
                 f1.write(line)
-    os.remove(csname)
+    os.remove("cs.csv")
 
 def getviz(cnames):
     if os.path.exists("comp.png") :
