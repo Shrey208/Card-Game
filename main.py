@@ -80,6 +80,7 @@ os.rename("charcters_stats.csv", "stats.csv")
 os.rename("superheroes_power_matrix.csv", "abilities.csv")
 
 stats = pd.read_csv("stats.csv")
+stats = stats[stats['Total'] > 5]
 abilities = pd.read_csv("abilities.csv")
 df = stats.merge(abilities, on=['Name'])
 sdf = stats[stats.Name.isin(df.Name)]
