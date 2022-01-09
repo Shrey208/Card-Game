@@ -65,9 +65,9 @@ def getviz(cnames):
     p2 = sdf.loc[sdf['Name'] == cnames[1]]
     p2 = p2.drop(columns=["Name", "Alignment"])
     p3 = pd.concat([p1 , p2]).transpose()
-    p3 = p3.div(p3.sum(axis=1), axis=0)
     p3.rename(columns = {p1.index[0] : cnames[0], p2.index[0] : cnames[1]}, inplace = True)
-    plot = p3.plot(kind = 'barh', stacked = True, title = cnames[0] + " vs " + cnames[1], mark_right = True)
+    p4 = p3.div(p3.sum(axis=1), axis=0)
+    plot = p4.plot(kind = 'barh', stacked = True, title = cnames[0] + " vs " + cnames[1], mark_right = True)
     fig = plot.get_figure()
     fig.savefig("comp.png")
 
