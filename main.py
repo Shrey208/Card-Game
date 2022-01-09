@@ -57,8 +57,8 @@ def getsts(n) :
                 f1.write(line)
     os.remove("cs.csv")
 
-def getviz(p3) :
-    plot = p3.plot(kind = 'barh', stacked = True, title = cnames[0] + " vs " + cnames[1], mark_right = True)
+def getviz(p3):
+    plot = p3.plot(y = None, kind = 'barh', stacked = True, title = cnames[0] + " vs " + cnames[1], mark_right = True)
     fig = plot.get_figure()
     fig.savefig("comp.png")
 
