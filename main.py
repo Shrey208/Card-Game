@@ -19,7 +19,7 @@ def getimg(data, n):
     imgname = "p" + str(n) +".png"
     if os.path.exists(imgname):
         os.remove(imgname)
-    url = glink + 'q=' + data + " Marvel Comics"
+    url = glink + 'q=' + data + " Comic Version"
     response = requests.get(url, headers = usr)
     html = response.text
     bs = BeautifulSoup(html, 'html.parser')

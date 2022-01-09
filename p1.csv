@@ -1,10 +1,10 @@
-Name,Warpath
-Alignment,good
+Name,Siryn
+Alignment,bad
 Intelligence,38
-Strength,72
+Strength,8
 Speed,47
-Durability,70
-Power,26
-Combat,84
-Total,337
-Abilities,"Agility, Cold Resistance, Durability, Super Strength, Stamina, Super Speed, Reflexes, Enhanced Hearing, Heat Resistance, Vision - Telescopic, Vision - Night"
+Durability,28
+Power,50
+Combat,42
+Total,213
+Abilities,"Flight, Enhanced Hearing, Sonar, Sonic Scream"
