@@ -61,15 +61,13 @@ def getviz(cnames):
     if os.path.exists("comp.png") :
         os.remove("comp.png")
     p1 = sdf.loc[sdf['Name'] == cnames[0]]
-    p1 = p1[["Name", "Intelligence", "Strength", "Speed", "Durability", "Power", "Combat", "Total"]].copy()
+    p1 = p1.drop(columns=["Name", "Alignment"])
     p2 = sdf.loc[sdf['Name'] == cnames[1]]
-    p2 = p2[["Name", "Intelligence", "Strength", "Speed", "Durability", "Power", "Combat", "Total"]].copy()
-    p3 = pd.DataFrame({cnames[0] : [p1.iat[0,1], p1.iat[0,2], p1.iat[0,3], p1.iat[0,4], p1.iat[0,5], p1.iat[0,6], p1.iat[0,7]],
-                        cnames[1]: [p2.iat[0,1], p2.iat[0,2], p2.iat[0,3], p2.iat[0,4], p2.iat[0,5], p2.iat[0,6], p2.iat[0,7]]},
-                        index=[0, 1, 2, 3, 4, 5, 6])
+    p2 = p2.drop(columns=["Name", "Alignment"])
+    p3 = pd.concat([p1 , p2]).transpose()
     p3 = p3.div(p3.sum(axis=1), axis=0)
-    p3["NOA"] = ["Intelligence", "Strength", "Speed", "Durability", "Power", "Combat", "Total"]
-    plot = p3.plot( x = 'NOA', kind = 'barh', stacked = True, title = cnames[0] + " vs " + cnames[1], mark_right = True)
+    p3.rename(columns = {p1.index[0] : cnames[0], p2.index[0] : cnames[1]}, inplace = True)
+    plot = p3.plot(kind = 'barh', stacked = True, title = cnames[0] + " vs " + cnames[1], mark_right = True)
     fig = plot.get_figure()
     fig.savefig("comp.png")
 
