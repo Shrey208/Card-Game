@@ -1,10 +1,10 @@
-Name,Forge
-Alignment,good
-Intelligence,63
-Strength,10
-Speed,12
-Durability,28
-Power,12
-Combat,48
-Total,173
-Abilities,"Intelligence, Magic"
+Name,Iron Monger
+Alignment,bad
+Intelligence,88
+Strength,63
+Speed,25
+Durability,90
+Power,57
+Combat,56
+Total,379
+Abilities,"Durability, Flight, Intelligence, Super Strength, Energy Beams"
