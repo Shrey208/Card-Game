@@ -78,7 +78,6 @@ pyls-spyder==0.4.0
 PyMsgBox==1.0.9
 pyodbc===4.0.1
 pyperclip==1.8.2
-#pypiwin32==223
 pypng==0.0.21
 pyppeteer==0.2.6
 PyPrind==2.11.3
@@ -97,7 +96,6 @@ pyttsx3==2.90
 pytweening==1.0.4
 pytz==2021.3
 pytz-deprecation-shim==0.1.0.post0
-#pywin32==223
 PyYAML==6.0
 radian==0.5.13
 rchitect==0.3.35
