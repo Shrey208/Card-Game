@@ -1,11 +1,8 @@
-#alabaster @ file:///home/ktietz/src/ci/alabaster_1611921544520/work
 anaconda-navigator==2.1.1
 appdirs==1.4.4
 argh==0.26.2
 asgiref==3.4.1
-async-generator @ file:///home/ktietz/src/ci/async_generator_1611927993394/work
 atomicwrites==1.4.0
-backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
 backports.tempfile @ file:///home/linux1/recipes/ci/backports.tempfile_1610991236607/work
 backports.weakref==1.0.post1
 bkcharts==0.2
@@ -33,7 +30,6 @@ docopt==0.6.2
 entrypoints==0.3
 et-xmlfile==1.1.0
 fake-useragent==0.1.11
-Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
 fonttools==4.25.0
 glob2 @ file:///home/linux1/recipes/ci/glob2_1610991677669/work
 google-api-core==1.31.5
@@ -129,10 +125,6 @@ simplegeneric==0.8.1
 sip==4.19.13
 SpeechRecognition==3.8.1
 Sphinx==4.2.0
-sphinxcontrib-applehelp @ file:///home/ktietz/src/ci/sphinxcontrib-applehelp_1611920841464/work
-sphinxcontrib-devhelp @ file:///home/ktietz/src/ci/sphinxcontrib-devhelp_1611920923094/work
-sphinxcontrib-jsmath @ file:///home/ktietz/src/ci/sphinxcontrib-jsmath_1611920942228/work
-sphinxcontrib-qthelp @ file:///home/ktietz/src/ci/sphinxcontrib-qthelp_1611921055322/work
 sqlparse==0.4.2
 statsmodels==0.12.2
 tables==3.6.1
