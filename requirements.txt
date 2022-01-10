@@ -5,7 +5,7 @@ anaconda-navigator==2.1.1
 #anyio @ file:///C:/ci/anyio_1620153135622/work/dist
 appdirs==1.4.4
 argh==0.26.2
-argon2-cffi @ file:///C:/ci/argon2-cffi_1613037869401/work
+#argon2-cffi @ file:///C:/ci/argon2-cffi_1613037869401/work
 arrow @ file:///C:/ci/arrow_1617738834352/work
 asgiref==3.4.1
 asn1crypto @ file:///tmp/build/80754af9/asn1crypto_1596577642040/work
