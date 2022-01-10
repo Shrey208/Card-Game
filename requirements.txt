@@ -113,7 +113,7 @@ sqlparse==0.4.2
 statsmodels==0.12.2
 tables==3.6.1
 tabulate==0.8.9
-TBB==0.2
+TBB==2021.4.0
 tenacity==8.0.1
 termcolor==1.1.0
 trio==0.19.0
