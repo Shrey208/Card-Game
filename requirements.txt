@@ -97,7 +97,7 @@ pyttsx3==2.90
 pytweening==1.0.4
 pytz==2021.3
 pytz-deprecation-shim==0.1.0.post0
-#pywin32==228
+pywin32==223
 PyYAML==6.0
 radian==0.5.13
 rchitect==0.3.35
