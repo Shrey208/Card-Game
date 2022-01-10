@@ -106,7 +106,7 @@ scikit-image==0.18.3
 scikit-learn-intelex==2021.5.1
 selenium==4.1.0
 simplegeneric==0.8.1
-sip==4.19.13
+sip==6.5.0
 SpeechRecognition==3.8.1
 Sphinx==4.2.0
 sqlparse==0.4.2
