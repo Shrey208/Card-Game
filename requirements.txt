@@ -3,7 +3,6 @@ appdirs==1.4.4
 argh==0.26.2
 asgiref==3.4.1
 atomicwrites==1.4.0
-backports.tempfile @ file:///home/linux1/recipes/ci/backports.tempfile_1610991236607/work
 backports.weakref==1.0.post1
 bkcharts==0.2
 black==19.10b0
@@ -31,7 +30,6 @@ entrypoints==0.3
 et-xmlfile==1.1.0
 fake-useragent==0.1.11
 fonttools==4.25.0
-glob2 @ file:///home/linux1/recipes/ci/glob2_1610991677669/work
 google-api-core==1.31.5
 google-api-python-client==1.12.8
 google-auth==1.35.0
@@ -45,7 +43,6 @@ html5lib @ file:///Users/ktietz/demo/mc3/conda-bld/html5lib_1629144453894/work
 httplib2==0.20.2
 imagesize @ file:///Users/ktietz/demo/mc3/conda-bld/imagesize_1628863108022/work
 inflection==0.5.1
-iniconfig @ file:///home/linux1/recipes/ci/iniconfig_1610983019677/work
 intervaltree @ file:///Users/ktietz/demo/mc3/conda-bld/intervaltree_1630511889664/work
 jdcal @ file:///Users/ktietz/demo/mc3/conda-bld/jdcal_1630584345063/work
 Js2Py==0.71
@@ -136,7 +133,6 @@ termcolor==1.1.0
 #terminado==0.9.4
 text-unidecode @ file:///Users/ktietz/demo/mc3/conda-bld/text-unidecode_1629401354553/work
 threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
-toolz @ file:///home/linux1/recipes/ci/toolz_1610987900194/work
 trio==0.19.0
 trio-websocket==0.9.2
 tzdata==2021.5
